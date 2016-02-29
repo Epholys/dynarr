@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * dynarr - Dynamic and Generic Array using C macros
- * Copyright 2015 Thomas Munoz (epholys@gmail.com)
+ * Copyright 2016 Thomas Munoz (epholys@gmail.com)
  *
  * dynarr is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ BCUT_TEST(dynarr_push)
     size_t index;
 
     DYNARR_DECLARE(int, array);
-    DYNARR_INIT(int, &array);
+    DYNARR_CONSTRUCT(int, &array);
     for(index=0; index<BCUT_DYNARR_SIZE; ++index)
     {
         DYNARR_PUSH(&array, fibbo8[index]);
@@ -53,7 +53,7 @@ BCUT_TEST(dynarr_pop)
     size_t index;
 
     DYNARR_DECLARE(int, array);
-    DYNARR_INIT(int, &array);
+    DYNARR_CONSTRUCT(int, &array);
     for(index=0; index<suite_size; ++index)
     {
         DYNARR_PUSH(&array, fibbo8[index]);
@@ -78,7 +78,7 @@ BCUT_TEST(dynarr_clear)
     size_t index;
 
     DYNARR_DECLARE(int, array);
-    DYNARR_INIT(int, &array);
+    DYNARR_CONSTRUCT(int, &array);
     for(index=0; index<BCUT_DYNARR_SIZE; ++index)
     {
         DYNARR_PUSH(&array, fibbo8[index]);

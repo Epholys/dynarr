@@ -1,7 +1,7 @@
 /******************************************************************************
  *
- * dynarr - Dynamic and Generic Array using C macros
- * Copyright 2015 Thomas Munoz (epholys@gmail.com)
+ * Dynarr - Dynamic and Generic Array using C macros
+ * Copyright 2016 Thomas Munoz (epholys@gmail.com)
  *
  * dynarr is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
  * 
  * # Use
  * Declare a array with DYNARR_DECLARE(), initialize it with
- * DYNARR_INIT(), fill it with DYNARR_PUSH(), remove last-inserted
+ * DYNARR_CONSTRUCT(), fill it with DYNARR_PUSH(), remove last-inserted
  * elements with DYNARR_POP() and don't forget to deallocate the memory with
  * DYNARR_DESTRUCT().
  *
@@ -41,7 +41,7 @@
  *
  *  DYNARR_DECLARE(int, my_stack);
  *
- *  DYNARR_INIT(int, &my_stack);
+ *  DYNARR_CONSTRUCT(int, &my_stack);
  *
  *  for(i=0; i<10; ++i) {
  *      DYNARR_PUSH(&my_stack, i);
@@ -100,7 +100,7 @@
  *  \warning Undefined behavior in some cases.
  */
 
-#define DYNARR_INIT(Type, ptr)                                         \
+#define DYNARR_CONSTRUCT(Type, ptr)                                         \
     (ptr)->sizeof_type = sizeof(Type);                                 \
     (ptr)->size = 0;                                                   \
     (ptr)->capacity = DYNARR_INITIAL_CAPACITY;                         \
