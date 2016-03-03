@@ -1,6 +1,6 @@
 /******************************************************************************
  *
- * Dynarr - Dynamic and Generic Array using C macros
+ * dynarr - Dynamic and Generic Array using C macros
  * Copyright 2016 Thomas Munoz (epholys@gmail.com)
  *
  * dynarr is free software: you can redistribute it and/or modify
