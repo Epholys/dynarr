@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra
-GFLAGS = -O0 -g
+GFLAGS = -fprofile-arcs -ftest-coverage -O0 -g
 OFLAGS = -O3
 IFLAGS = -I./ -Itests/ -Ilib/
 DEFFLAGS := $(CFLAGS)

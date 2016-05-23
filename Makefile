@@ -10,7 +10,7 @@ debugall : DEFFLAGS += $(GFLAGS)
 debugall : $(FILESO)
 
 testing: debugall
-	$(CC) $(CFLAGS) $(GCFLAGS) $(FILESO) -o $@
+	$(CC) $(CFLAGS) $(GFLAGS) $(FILESO) -o $@
 
 %.o : %.c
 	$(CC) -c $(DEFFLAGS) $(CFLAGS) $< -o $@ $(IFLAGS)
